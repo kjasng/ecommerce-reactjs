@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      Ecommerce
+    <div className="underline">
+      <h1>
+        hi
+        <h2>hi</h2>
+      </h1>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
