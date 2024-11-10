@@ -2,20 +2,22 @@ import Button from "@components/Button/Button";
 import ButtonLink from "@components/Button/ButtonLink";
 import Image from "@components/Image/Image";
 import {
-    Facebook,
-    Heart,
-    Instagram,
-    Menu,
-    RefreshCw,
-    ShoppingCart,
-    Youtube
+  Facebook,
+  Heart,
+  Instagram,
+  Menu,
+  RefreshCw,
+  ShoppingCart,
+  Youtube
 } from "lucide-react";
 
-function Header() {
+function Header({ className }) {
   return (
     <>
       {window.innerWidth > 1024 ? (
-        <div className="flex h-20 w-full xl:w-11/12 justify-between items-center px-4 xl:px-16 py-4 fixed bg-transparent top-0">
+        <div
+          className={`flex h-20 w-full xl:w-3/4 justify-between items-center px-4 xl:px-16 py-4 fixed bg-transparent top-0 ${className}`}
+        >
           <div className="flex justify-between w-full items-center gap-4">
             <div className="flex justify-center items-center gap-2">
               <ButtonLink className="w-full h-max rounded-3xl p-1 bg-black">
