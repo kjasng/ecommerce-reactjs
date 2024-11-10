@@ -16,24 +16,26 @@ function Header({ className }) {
     <>
       {window.innerWidth > 1024 ? (
         <div
-          className={`flex h-20 w-full xl:w-3/4 justify-between items-center px-4 xl:px-16 py-4 fixed bg-transparent top-0 ${className}`}
+          className={`flex h-20 w-full xl:w-4/5 justify-between items-center px-4 xl:px-24 py-4 fixed bg-transparent top-0 ${className}`}
         >
           <div className="flex justify-between w-full items-center gap-4">
-            <div className="flex justify-center items-center gap-2">
-              <ButtonLink className="w-full h-max rounded-3xl p-1 bg-black">
-                <Facebook className="text-white" size={14} />
-              </ButtonLink>
-              <ButtonLink className="w-full h-max rounded-3xl p-1 bg-black">
-                <Instagram className="bg-black text-white" size={14} />
-              </ButtonLink>
-              <ButtonLink className="w-full h-max rounded-3xl p-1 bg-black">
-                <Youtube className="bg-black text-white" size={14} />
-              </ButtonLink>
-            </div>
-            <div className="flex gap-6 text-base w-max font-extralight">
-              <ButtonLink>Elements</ButtonLink>
-              <ButtonLink>Our Shop</ButtonLink>
-              <ButtonLink>About us</ButtonLink>
+            <div className="flex gap-4 justify-center items-center">
+              <div className="flex justify-center items-center gap-2">
+                <ButtonLink className="w-full h-max rounded-3xl p-1 bg-black">
+                  <Facebook className="text-white" size={14} />
+                </ButtonLink>
+                <ButtonLink className="w-full h-max rounded-3xl p-1 bg-black">
+                  <Instagram className="bg-black text-white" size={14} />
+                </ButtonLink>
+                <ButtonLink className="w-full h-max rounded-3xl p-1 bg-black">
+                  <Youtube className="bg-black text-white" size={14} />
+                </ButtonLink>
+              </div>
+              <div className="flex gap-6 text-base w-max font-extralight">
+                <ButtonLink>Elements</ButtonLink>
+                <ButtonLink>Our Shop</ButtonLink>
+                <ButtonLink>About us</ButtonLink>
+              </div>
             </div>
             <Image
               src="https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Logo-retina.png"
@@ -41,21 +43,23 @@ function Header({ className }) {
               alt="Logo"
               className="object-cover w-36 h-auto cursor-pointer"
             />
-            <div className="flex gap-6 text-base w-max font-extralight">
-              <ButtonLink>Contacts</ButtonLink>
-              <ButtonLink>Search</ButtonLink>
-              <ButtonLink>Sign In</ButtonLink>
-            </div>
-            <div className="flex justify-center items-center gap-2">
-              <ButtonLink className="w-full h-max rounded-3xl p-2">
-                <RefreshCw className="text-black" size={20} />
-              </ButtonLink>
-              <ButtonLink className="w-full h-max rounded-3xl p-2">
-                <Heart className="text-black" size={20} />
-              </ButtonLink>
-              <ButtonLink className="w-full h-max rounded-3xl p-2">
-                <ShoppingCart className="text-black" size={20} />
-              </ButtonLink>
+            <div className="flex gap-4 justify-center items-center">
+              <div className="flex gap-6 text-base w-max font-extralight">
+                <ButtonLink>Contacts</ButtonLink>
+                <ButtonLink>Search</ButtonLink>
+                <ButtonLink>Sign In</ButtonLink>
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <ButtonLink className="w-full h-max rounded-3xl p-2">
+                  <RefreshCw className="text-black" size={20} />
+                </ButtonLink>
+                <ButtonLink className="w-full h-max rounded-3xl p-2">
+                  <Heart className="text-black" size={20} />
+                </ButtonLink>
+                <ButtonLink className="w-full h-max rounded-3xl p-2">
+                  <ShoppingCart className="text-black" size={20} />
+                </ButtonLink>
+              </div>
             </div>
           </div>
         </div>
