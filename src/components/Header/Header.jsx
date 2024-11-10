@@ -60,7 +60,9 @@ function Header({ className }) {
           </div>
         </div>
       ) : (
-        <div className="w-full h-20 flex fixed top-0 justify-between py-4 px-4 items-center">
+        <div
+          className={`w-full h-20 flex fixed top-0 justify-between py-4 px-4 items-center ${className}`}
+        >
           <Button onClick={() => {}}>
             <Menu />
           </Button>
