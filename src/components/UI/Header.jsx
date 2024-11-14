@@ -1,6 +1,6 @@
-import Button from "@components/Button/Button";
-import ButtonLink from "@components/Button/ButtonLink";
-import Image from "@components/Image/Image";
+import Button from "@components/UI/Button";
+import ButtonLink from "@components/UI/ButtonLink";
+import Image from "@components/UI/Image";
 import {
   Facebook,
   Heart,
@@ -11,12 +11,18 @@ import {
   Youtube
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 
 function Header({ className }) {
+  const scrollPosition = useScrollPosition();
   return (
     <>
       <div
-        className={`h-20 w-full xl:w-4/5 justify-between items-center px-4 xl:px-24 py-4 hidden fixed lg:flex bg-transparent top-0 ${className}`}
+        className={`h-20 w-screen xl:w-screen justify-between items-center px-4 xl:px-32 py-4 hidden lg:flex top-0 ${
+          scrollPosition > 80
+            ? "bg-white/80 backdrop-blur-md fixed"
+            : "bg-transparent  transition-all absolute"
+        } ${className}`}
       >
         <div className="flex justify-between w-full items-center gap-4">
           <div className="flex gap-4 justify-center items-center">
@@ -82,7 +88,7 @@ function Header({ className }) {
         </div>
       </div>
       <div
-        className={`w-full h-20 flex fixed lg:hidden top-0 justify-between py-4 px-4 items-center ${className}`}
+        className={`w-screen h-20 flex bg-white/60 backdrop-blur-md fixed lg:hidden top-0 justify-between py-4 px-4 items-center ${className}`}
       >
         <Button onClick={() => {}}>
           <Menu />
