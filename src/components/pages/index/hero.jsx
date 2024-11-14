@@ -1,5 +1,5 @@
 import Button from "@components/UI/Button";
-import { Truck } from "lucide-react";
+import { CreditCard, MessageCircle, Package, Truck } from "lucide-react";
 
 function Hero() {
   return (
@@ -13,33 +13,33 @@ function Hero() {
           Go to shop
         </Button>
       </div>
-      <div className="absolute w-11/12 left-1/2 md:w-4/5 -translate-x-1/2 -bottom-44 md:-bottom-20 lg:-bottom-16 bg-primary px-4 py-2 lg:p-8 flex flex-wrap lg:flex-nowrap md:flex-row gap-y-4 lg:gap-12 justify-center">
-        <div className="flex items-center w-full md:w-1/2 justify-center lg:w-1/4 gap-2">
+      <div className="absolute w-11/12 left-1/2 md:w-4/5 -translate-x-1/2 -bottom-48 md:-bottom-20 lg:-bottom-16 bg-primary px-4 py-2 lg:p-8 flex flex-wrap lg:flex-nowrap md:flex-row gap-y-4 lg:gap-12 justify-center">
+        <div className="flex items-center w-full md:w-1/2 justify-start md:justify-center lg:w-1/4 gap-4 lg:gap-2 transition-all">
           <Truck color="white" size={32} />
           <div className="flex gap-2 text-white/90 flex-col justify-center items-start">
-            <h3 className="text-lg w-max">Fast Shipping</h3>
+            <h3 className="text-lg w-max">Fastest Shipping</h3>
             <p className="text-sm">Order at $39 order</p>
           </div>
         </div>
-        <div className="flex items-center w-full md:w-1/2 justify-center lg:w-1/4 gap-2">
-          <Truck color="white" size={32} />
+        <div className="flex items-center w-full md:w-1/2 justify-start md:justify-center lg:w-1/4 gap-4 lg:gap-2 transition-all">
+          <CreditCard color="white" size={32} />
           <div className="flex gap-2 text-white/90 flex-col justify-center items-start">
-            <h3 className="text-lg w-max">Fast Shipping</h3>
-            <p className="text-sm">Order at $39 order</p>
+            <h3 className="text-lg w-max">100% Safe Payments</h3>
+            <p className="text-sm">9 month installments</p>
           </div>
         </div>
-        <div className="flex items-center w-full md:w-1/2 justify-center lg:w-1/4 gap-2">
-          <Truck color="white" size={32} />
+        <div className="flex items-center w-full md:w-1/2 justify-start md:justify-center lg:w-1/4 gap-4 lg:gap-2 transition-all">
+          <Package color="white" size={32} />
           <div className="flex gap-2 text-white/90 flex-col justify-center items-start">
-            <h3 className="text-lg w-max">Fast Shipping</h3>
-            <p className="text-sm">Order at $39 order</p>
+            <h3 className="text-lg w-max">14-Days Return</h3>
+            <p className="text-sm">Shop with confidence</p>
           </div>
         </div>
-        <div className="flex items-center w-full md:w-1/2 justify-center lg:w-1/4 gap-2">
-          <Truck color="white" size={32} />
+        <div className="flex items-center w-full md:w-1/2 justify-start md:justify-center lg:w-1/4 gap-4 lg:gap-2 transition-all">
+          <MessageCircle color="white" size={32} />
           <div className="flex gap-1 text-white/90 flex-col justify-center items-start">
-            <h3 className="text-lg w-max">Fast Shipping</h3>
-            <p className="text-sm">Order at $39 order</p>
+            <h3 className="text-lg w-max">24/7 Online Support</h3>
+            <p className="text-sm">Delivered to home</p>
           </div>
         </div>
       </div>

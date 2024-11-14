@@ -21,7 +21,7 @@ function Header({ className }) {
         className={`h-20 w-screen xl:w-screen justify-between items-center px-4 xl:px-32 py-4 hidden lg:flex top-0 ${
           scrollPosition > 80
             ? "bg-white/80 backdrop-blur-md fixed"
-            : "bg-transparent  transition-all absolute"
+            : "bg-transparent transition-all absolute"
         } ${className}`}
       >
         <div className="flex justify-between w-full items-center gap-4">
@@ -80,15 +80,22 @@ function Header({ className }) {
               <ButtonLink className="w-full h-max rounded-3xl p-2">
                 <Heart className="text-black" size={20} />
               </ButtonLink>
-              <ButtonLink className="w-full h-max rounded-3xl p-2">
+              <ButtonLink className="w-full h-max rounded-3xl p-2 relative">
                 <ShoppingCart className="text-black" size={20} />
+                <span className="absolute right-0 top-0 z-40 bg-black text-white px-1 rounded-full text-xs">
+                  0
+                </span>
               </ButtonLink>
             </div>
           </div>
         </div>
       </div>
       <div
-        className={`w-screen h-20 flex bg-white/60 backdrop-blur-md fixed lg:hidden top-0 justify-between py-4 px-4 items-center ${className}`}
+        className={`w-screen h-20 flex fixed lg:hidden top-0 justify-between py-4 px-4 items-center ${
+          scrollPosition > 80
+            ? "bg-white/80 backdrop-blur-md fixed"
+            : "bg-transparent absolute"
+        } ${className}`}
       >
         <Button onClick={() => {}}>
           <Menu />
@@ -99,7 +106,12 @@ function Header({ className }) {
           alt="Logo"
           className="object-cover w-36 h-auto cursor-pointer"
         />
-        <ShoppingCart />
+        <ButtonLink className="h-max rounded-3xl p-2 relative">
+          <ShoppingCart />
+          <span className="absolute right-0 top-0 z-40 bg-black text-white px-1 rounded-full text-xs">
+            0
+          </span>
+        </ButtonLink>
       </div>
     </>
   );
