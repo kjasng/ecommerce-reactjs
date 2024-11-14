@@ -7,16 +7,114 @@ import {
   Instagram,
   Menu,
   RefreshCw,
+  Search,
   ShoppingCart,
+  UserRound,
+  X,
   Youtube
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollPosition } from "../hooks/useScrollPosition";
+import { useState } from "react";
 
 function Header({ className }) {
   const scrollPosition = useScrollPosition();
+  const [isShow, setIsShow] = useState(false);
+
+  const NavBar = () => {
+    return (
+      <>
+        <div className="bg-primary absolute w-screen h-screen z-40 top-0 left-0 opacity-40"></div>
+        <div className="w-80 h-screen bg-white absolute top-0 left-0 z-50 flex items-start justify-center">
+          <Button
+            className="absolute -right-10 top-2 bg-white py-1 px-1 rounded-full"
+            onClick={() => {
+              setIsShow(!isShow);
+            }}
+          >
+            <X size={20} />
+          </Button>
+          <div className="mt-4 flex justify-center flex-col items-center gap-4">
+            <Image
+              src="https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Logo-retina.png"
+              href="/"
+              alt="Logo"
+              className="object-cover w-36 h-auto cursor-pointer"
+            />
+            <div className="relative flex items-center">
+              {/* Input search products here */}
+              <input
+                type="text"
+                placeholder="Search for products."
+                className="border border-[#5555] pr-12 pl-4 py-1"
+              />
+              <Button className="absolute right-2">
+                <Search size={18} />
+              </Button>
+            </div>
+
+            <ul className="flex flex-col gap-2 items-start justify-center w-full text-sm">
+              <li className="w-fulls p-1">
+                <a href="">Home</a>
+              </li>
+              <li className="w-fulls p-1">
+                <a href="">Elements</a>
+              </li>
+              <li className="w-fulls p-1">
+                <a href="">Shop</a>
+              </li>
+              <li className="w-fulls p-1">
+                <a href="">About us</a>
+              </li>
+              <li className="w-fulls p-1">
+                <a href="">Contact us</a>
+              </li>
+            </ul>
+            {/* User panel */}
+            <ul className="flex flex-col w-full gap-4">
+              <li>
+                <a
+                  href=""
+                  className="flex gap-4 w-full justify-start items-center"
+                >
+                  <UserRound size={16} /> Account
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href=""
+                  className="flex gap-4 w-full justify-start items-center"
+                >
+                  <ShoppingCart size={16} /> Cart $0.00
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  className="flex gap-4 w-full justify-start items-center"
+                >
+                  <Heart size={16} /> Wishlist
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  className="flex gap-4 w-full justify-start items-center"
+                >
+                  <RefreshCw size={16} /> Compare
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </>
+    );
+  };
+
   return (
     <>
+      {/* Desktop Header */}
       <div
         className={`h-20 w-screen xl:w-screen justify-between items-center px-4 xl:px-32 py-4 hidden lg:flex top-0 ${
           scrollPosition > 80
@@ -90,28 +188,38 @@ function Header({ className }) {
           </div>
         </div>
       </div>
+      {/* Mobile Header */}
       <div
         className={`w-screen h-20 flex fixed lg:hidden top-0 justify-between py-4 px-4 items-center ${
           scrollPosition > 80
-            ? "bg-white/80 backdrop-blur-md fixed"
+            ? "bg-white/80 backdrop-blur-xl fixed"
             : "bg-transparent absolute"
         } ${className}`}
       >
-        <Button onClick={() => {}}>
-          <Menu />
-        </Button>
-        <Image
-          src="https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Logo-retina.png"
-          href="/"
-          alt="Logo"
-          className="object-cover w-36 h-auto cursor-pointer"
-        />
-        <ButtonLink className="h-max rounded-3xl p-2 relative">
-          <ShoppingCart />
-          <span className="absolute right-0 top-0 z-40 bg-black text-white px-1 rounded-full text-xs">
-            0
-          </span>
-        </ButtonLink>
+        {isShow && <NavBar></NavBar>}
+
+        <>
+          <Button
+            onClick={() => {
+              setIsShow(!isShow);
+            }}
+          >
+            <Menu />
+          </Button>
+
+          <Image
+            src="https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Logo-retina.png"
+            href="/"
+            alt="Logo"
+            className="object-cover w-36 h-auto cursor-pointer"
+          />
+          <ButtonLink className="h-max rounded-3xl p-2 relative">
+            <ShoppingCart />
+            <span className="absolute right-0 top-0 z-40 bg-black text-white px-1 rounded-full text-xs">
+              0
+            </span>
+          </ButtonLink>
+        </>
       </div>
     </>
   );
